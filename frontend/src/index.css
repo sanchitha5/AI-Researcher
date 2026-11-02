@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+    --color-canvas: #FFFFFF;
+    --color-surface: #F7F7F5;
+    --color-sidebar: #FAFAF9;
+    --color-border: #E7E5E2;
+    --color-border-strong: #D8D5D0;
+    --color-ink: #1B1B18;
+    --color-ink-soft: #57534E;
+    --color-ink-faint: #8C8880;
+    --color-accent: #2F6FED;
+    --color-accent-soft: #EAF0FE;
+    --color-accent-hover: #2559C9;
+    --color-success: #1A8A5F;
+
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --shadow-card: 0 1px 2px rgba(27, 27, 24, 0.04), 0 1px 12px rgba(27, 27, 24, 0.03);
+    --shadow-popover: 0 4px 24px rgba(27, 27, 24, 0.10);
+
+    --radius-xl: 0.875rem;
+    --radius-2xl: 1.125rem;
+
+    --animate-fadeIn: fadeIn 0.2s ease-out;
+    --animate-slideUp: slideUp 0.25s ease-out;
+    --animate-pulseDot: pulseDot 1.4s ease-in-out infinite;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(6px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulseDot {
+
+        0%,
+        100% {
+            opacity: 0.35;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #ffffff;
+    color: #1b1b18;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #d8d5d0 transparent;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d8d5d0;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+:focus-visible {
+    outline: 2px solid #2f6fed;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Prose overrides for rendered markdown answers, kept close to Notion's reading style */
+.answer-prose h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-top: 1.1rem;
+    margin-bottom: 0.4rem;
+    color: #1b1b18;
+}
+
+.answer-prose h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 0.9rem;
+    margin-bottom: 0.35rem;
+    color: #1b1b18;
+}
+
+.answer-prose p {
+    margin-bottom: 0.65rem;
+    line-height: 1.65;
+}
+
+.answer-prose ul,
+.answer-prose ol {
+    margin-bottom: 0.65rem;
+    padding-left: 1.25rem;
+}
+
+.answer-prose li {
+    margin-bottom: 0.3rem;
+    line-height: 1.6;
+}
+
+.answer-prose ul {
+    list-style-type: disc;
+}
+
+.answer-prose ol {
+    list-style-type: decimal;
+}
+
+.answer-prose strong {
+    font-weight: 600;
+}
+
+.answer-prose code {
+    background: #f7f7f5;
+    border: 1px solid #e7e5e2;
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+}
+
+.answer-prose a {
+    color: #2f6fed;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}

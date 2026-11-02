@@ -1,0 +1,22 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Data (uploaded files + vector DB should not be committed)
+data/uploads/*
+!data/uploads/.gitkeep
+data/chroma/*
+!data/chroma/.gitkeep
+data/documents.json
+
+# OS
+.DS_Store
+
+# Test artifacts
+.pytest_cache/
